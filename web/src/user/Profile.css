@@ -1,0 +1,47 @@
+.link-items,
+.notification-link {
+    display: flex;
+
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+
+
+}
+
+.ul-items li {
+    padding: 20px;
+    margin: 10px;
+}
+
+.ul-items li:hover {
+    border-left: solid black;
+    background-color: coral;
+}
+
+
+ @media only screen and (max-width: 768px) {
+    
+
+    .leftprofile-column, .suggestions-column{
+        display: none;
+}
+.rightprofile-column{
+    width: 100%;
+    padding: 0;
+}
+
+.your-insights{
+    width: 100%
+}
+
+.insights-card{
+    padding: 10px;
+    margin: 0;
+}
+
+} 

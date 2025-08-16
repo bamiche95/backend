@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Leaflet CSS */
+@import url("https://unpkg.com/leaflet/dist/leaflet.css");
+/* General Reset */
+
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  background-color: white;
+}
+
+.container-fluid,
+.row,
+.slide-container {
+  height: 100%;
+}
+
+/* Header Overlapping the Hero */
+.homeHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Prevent overflow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(94, 94, 94, 0.2);
+  z-index: 10;
+  box-sizing: border-box;
+  /* Prevent extra width */
+}
+
+/* Ensure text and buttons are visible */
+.homeHeader a,
+.homeHeader h2,
+.homeHeader button {
+  color: white;
+  /* Make text readable over the image */
+}
+
+.index-menu-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* Make menu items align horizontally */
+  gap: 20px;
+  /* Space between items */
+}
+
+.index-menu-items ul li {
+  display: inline;
+}
+
+.index-menu-items ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.login-button {
+  padding: 8px 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hero Section Styling */
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  /* Full height of the viewport */
+  background: url('/src/images/index_bg.jpg') no-repeat center center/cover;
+  /* Background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Login Form Container */
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  /* Slightly transparent white background */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Button Styling */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-form button:first-of-type {
+  background: #DB4437;
+  /* Google Red */
+  color: white;
+}
+
+.login-form button:nth-of-type(2) {
+  background: #000;
+  /* Apple Black */
+  color: white;
+}
+
+.login-form button[type="submit"] {
+  background: #4285F4;
+  /* Blue for main action */
+  color: white;
+}
+
+/* Horizontal Rule Styling */
+.login-form hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Input Styling */
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Paragraph Styling */
+.login-form p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+
+.other-section {
+  display: flex;
+  justify-content: space-between;
+  /* Space out h2 and p */
+  align-items: center;
+  /* Align vertically */
+  max-width: 900px;
+  /* Adjust width */
+  margin: 50px auto;
+  /* Center the section */
+  padding: 20px;
+}
+
+/* Style for the left content (h2) */
+.other-section h2 {
+  flex: 1;
+  /* Take up equal space */
+  font-size: 24px;
+  color: #333;
+}
+
+/* Style for the right content (p) */
+.other-section p {
+  flex: 2;
+  /* Make it slightly bigger than h2 */
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  padding-left: 20px;
+  /* Add spacing between text */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .other-section {
+    flex-direction: column;
+    /* Stack on smaller screens */
+    text-align: center;
+  }
+
+  .other-section p {
+    padding-left: 0;
+  }
+}
+
+
+/* Main container styling */
+.points {
+  display: flex;
+  justify-content: space-between;
+  /* Space elements evenly */
+  align-items: center;
+  /* Align them properly */
+  max-width: 900px;
+  margin: 50px auto;
+  gap: 20px;
+  /* Space between items */
+}
+
+/* Individual point containers */
+.point {
+  flex: 1;
+  /* Make them take equal space */
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.point i {
+  font-size: 30px;
+  color: #4285F4;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .points {
+    flex-direction: column;
+    /* Stack on small screens */
+    gap: 15px;
+  }
+
+  .profile-pic-gap2 {
+    display: none;
+  }
+}
+
+
+
+/* index.css or wherever you prefer to add custom styles */
+/* header styling */
+
+.userheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-pic-gap,
+.profile-pic-gap2,
+.profile-pic-gap3 {
+  background-color: white;
+  /* this is the "gap" */
+  padding: 3px;
+  /* the visible space between border and image */
+  border-radius: 50%;
+}
+
+.profile-pic {
+  display: block;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+#profile-icon {
+  font-size: 30px;
+  /* Adjust the size of the icon */
+  color: #D96C3B;
+  /* Change the color to blue */
+  cursor: pointer;
+  /* Add a pointer cursor for interactivity */
+  margin-left: 10px;
+  /* Add some spacing */
+  transition: transform 0.2s ease, color 0.2s ease;
+  /* Add hover effects */
+}
+
+#profile-icon:hover {
+  color: #0056b3;
+  /* Darker blue on hover */
+  transform: scale(1.2);
+  /* Slightly enlarge the icon on hover */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-messages {
+  display: flex;
+
+  align-items: center;
+  cursor: pointer;
+  /* Change cursor to pointer */
+}
+
+.search-bar {
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  background-color: #ebebeb;
+  border-radius: 23px;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    display: none;
+    /* Hide search bar on smaller screens */
+
+  }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+  .profile-pic-gap {
+    display: none;
+    /* Hide search bar on smaller screens */
+
+  }
+
+}
+
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.75rem;
+  /* same as text-3xl */
+  font-weight: bold;
+  background: linear-gradient(to right, #D96C3B, #A8C686, #4BA3C3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+
+/* Header side bar */
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px);
+  /* Adjust based on your .offcanvas-header height */
+  overflow: hidden;
+  /* Prevent overall scroll */
+  padding: 1rem;
+}
+
+.offcanvas-body-content {
+  flex: 1;
+  /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  /* If content overflows, only this part scrolls internally */
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.first-li-items-mobile ul,
+.second-li-items-mobile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.sidebar-items li {
+  margin-bottom: 1rem;
+  /* Spacing between items */
+}
+
+.sidebar-items a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.user-info h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #d96c3b;
+  padding: 1px 2px;
+  border-radius: 23px;
+
+}
+
+.meta-info {
+  font-size: 12px;
+  color: #d96c3b;
+  margin-left: 20px;
+}
+
+.first-li-items-mobile li {
+  display: flex;
+  ;
+  flex-direction: column;
+}
+
+/* BottomNav css */
+/* BottomNav.css */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  z-index: 9999;
+  /* Ensures the BottomNav stays on top of other content */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Optional, gives it a shadow effect */
+}
+
+@media only screen and (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.bottom-nav .nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.bottom-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+.bottom-nav .nav-link.active {
+  color: #007bff;
+  /* Highlight active link */
+}
+
+.fab-container {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fab-button {
+  background-color: #007bff;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 24px;
+}

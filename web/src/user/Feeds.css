@@ -1,0 +1,1655 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ *{
+
+    font-family: poppins, sans-serif;
+ }
+
+
+#header-profile {
+    border: solid 3px rgb(145, 145, 145);
+    border-radius: 50%;
+    width: 50px;
+    height: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.search-area {
+    background-color: rgb(231, 231, 231);
+    padding: 10px;
+    border-radius: 23px;
+    align-items: center;
+    display: flex;
+}
+
+#search-nrby {
+    background: transparent;
+    color: black;
+    border: none;
+    padding: 5px;
+    width: 400px;
+
+}
+
+#search-nrby:focus {
+    outline: none;
+    border: none;
+}
+
+
+/* Ensure the profile image container is positioned relatively */
+.profile-image {
+    position: relative;
+    display: inline-block; /* Keeps the popup aligned with the image */
+}
+
+/* Profile Popup Styling */
+.profile-popup {
+    z-index: 999;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 12px 0 12px 12px;
+    background: white;
+    position: absolute;
+    top: 55px; /* Position it directly below the profile image */
+    right: -50;
+    transform: translateX(-50%); /* Centers it horizontally */
+    width: 220px; /* Fixed width for better control */
+    max-width: 90vw; /* Ensures the popup doesn’t overflow the viewport */
+    max-height: 80vh; /* Prevents the popup from being too tall */
+    overflow-y: auto; /* Adds a scrollbar if content is too long */
+    white-space: normal; /* Allows text wrapping */
+}
+
+#header-profile2{
+    display: none;
+    border: solid 1px blueviolet;
+    border-radius: 50%;
+    width: 50px;
+    height: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#profile-area{
+width: 80px;
+height: 80px;
+border-radius: 50%;
+}
+#chat1{
+display: none;
+}
+@media only screen and (max-width: 768px) {
+
+    .right-sidebar{
+        display: none;
+    }
+    #header-profile2{
+        display: block;
+        width: 40px;
+    }
+    .logo{
+        display: none;
+    }
+    #search-nrby {
+    
+        width: 150px;
+        
+
+    }
+    header{
+        padding: 15px;
+    }
+    .search-area{
+        padding: 0 5px 0 5px;
+    }
+    #header-profile{
+        display: none;
+        padding: 10px;
+    }
+
+    #chat1{
+        display: block;
+        font-size: 30px;
+    }
+
+    .left-sidebar {
+        
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #aa1212;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+       /* transform: translateX(-100%);  Sidebar hidden by default */
+    }
+
+    .left-sidebar.active {
+    
+        transform: translateX(0); /* Slide into view */
+    }
+}
+
+
+/*
+
+FOr Feeds Page
+
+*/
+
+
+
+
+.left-sidebar{
+    height: 100vh; /* Full height */
+    width: 20%; /* You can adjust this width as per your needs */
+    position: fixed; /* Fix it to the left */
+    top: 10%;
+    left: -23px;
+    background-color: rgb(96, 137, 179); /* Set a background color */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* Disable scrolling on left-sidebar */
+}
+
+body{
+margin: 0;
+}
+
+.left-sidebar ul {
+    list-style: none;
+   
+    
+}
+
+.left-sidebar ul li {
+    padding-bottom: 35px;
+}
+.left-sidebar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-sidebar ul li a:hover {
+    font-weight: bold;
+    
+ }
+
+.post-btn {
+    margin-left: 35px;
+    padding: 7px 50px 7px 50px;
+    border: none;
+    border-radius: 23px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 11px;
+}
+
+
+
+.second-li ul{
+    list-style: none;
+}
+
+.second-li ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.second-li ul li a:hover{
+    font-weight: bold;
+}
+
+.right-sidebar {
+    height: 100vh; /* Full height */
+    width: 20%; /* You can adjust this width as per your needs */
+    position: fixed; /* Fix it to the right */
+    top: 10%;
+    right: 0;
+    
+    background-color: aliceblue; /* Set a background color */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Disable scrolling on right-sidebar */
+    
+}
+
+.create-event, .create-page {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px; /* Adds space between sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.create-event{
+    background-image: url('../images/people.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.create-event h2, .create-page h4 {
+    margin-bottom: 10px; /* Adds space below the headings */
+    color: #ffffff; /* Dark color for better readability */
+}
+
+.create-event button, .create-page a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blueviolet; /* Green background for buttons */
+    color: white;
+    text-align: center;
+    border-radius: 23px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.create-event button:hover, .create-page a:hover {
+    background-color: rgb(156, 67, 240); /* Darker green on hover */
+}
+
+.create-page img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+.home-class{
+    display: flex;
+    flex: 1; /* Make the home-class take the full space */
+    width: 100%;
+}
+
+
+
+/* Hide scrollbar for WebKit browsers */
+.middle-column::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Style for the middle column */
+/* Style for the middle column */
+.middle-column {
+ 
+   background-color: transparent;
+   
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Tabs navigation styling */
+.tabs {
+    display: flex;
+    justify-content: center; /* Center the tabs horizontally */
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%; /* Ensures it takes up full width of the middle column */
+   
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Individual tab styling */
+.tab {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+    
+}
+.tab p{
+    font-size: 10px;
+    font-weight: bold;
+    
+}
+.tab i{
+    font-size: 30px;
+    color: #000000;
+    
+}
+.tab i.active{
+    color: #ffffff;
+}
+/* Active tab style */
+.tab.active {
+    background-color: #e2e2e2;
+    color: white;
+}
+
+/* Tab content styling */
+.tab-content {
+    display: none;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+
+.tab-content.active {
+    display: block;
+}
+
+/* Style for each tab content */
+.tab-content h3 {
+    margin-top: 0;
+}
+
+.new-post-btn{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+}
+
+.tab-btn{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1; /* Each tab takes equal space */
+    text-transform: capitalize;
+    display: inline-block; /* Allowing tabs to align within flex container */
+    background-color: blueviolet;
+    margin: 15px;
+    border-radius: 23px;
+    cursor: pointer;
+}
+
+
+.mobile-sidebar {
+    height: 100vh;
+    width: 250px; /* Adjust as needed */
+    position: fixed;
+    top: 0;
+    left: -255px; /* Initially hidden */
+    background-color: aliceblue;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: left 0.3s ease-in-out; /* Smooth slide-in animation */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* When active, the sidebar slides in */
+.mobile-sidebar.active {
+    left: 0;
+}
+
+.mobile-sidebar ul {
+    list-style: none;
+   
+    
+}
+
+.mobile-sidebar ul li {
+    padding-bottom: 35px;
+}
+.mobile-sidebar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.mobile-sidebar ul li a:hover {
+    font-weight: bold;
+    
+ }
+
+
+
+ @media only screen and (max-width: 768px) {
+
+    .tab {
+       font-size: 11px;
+
+    }
+    
+    .middle-column{
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0;
+        height: 100vh;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .tab-btn{
+        display: none;
+    }
+
+    .tab{
+        margin: 7px;
+        align-items: center;
+        padding: 5px;
+    }
+
+ 
+    
+}
+
+
+/*
+
+Mobile menu
+
+
+*/
+
+.mobile-menus {
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 50%;
+    display: none;  /* Initially hide the count */
+}
+
+.mobileMenuIcons {
+    position: relative;
+    text-align: center;
+    font-size: 11px;
+}
+
+.mobileMenuIcons a{
+   text-decoration: none;
+   color: black;
+   font-weight: normal;
+  
+}
+
+
+
+.mobileMenuIcons a i,
+#mobile-menu-icons1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 7px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.mobileMenuIcons a i:hover {
+    background-color: #9741e7;
+    color: white;
+}
+
+#mobile-menu-icons1 {
+    background-color: #9741e7;
+    color: white;
+}
+
+/* Popup Styling */
+.grpBtn-popup {
+    visibility: hidden; /* Keeps it invisible but allows height calculation */
+    position: fixed;
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 120px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.grpBtn-popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.grpBtn-popup button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grpBtn-popup button:hover {
+    background-color: #9741e7;
+}
+
+
+/*
+
+Profile Area
+
+*/
+
+
+
+#profilePic-img{
+    border: solid 5px rgb(255, 255, 255);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    margin-top: -20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+
+}
+
+.bannerBtn1{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 60%;
+    font-size: 10px;
+    border: none;
+    background-color: #a545ff;
+    padding: 5px;
+    border-radius: 23px;
+    color: white;
+}
+.bannerBtn2{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 30%;
+    font-size: 10px;
+    border: none;
+    background-color: #a545ff;
+    padding: 5px;
+    border-radius: 23px;
+    color: white;
+
+}
+
+.edit-profileBtn {
+    font-size: 10px;
+    border: none;
+    background-color: #a545ff;
+    padding: 5px;
+    border-radius: 23px;
+    color: white;
+}
+
+
+/* Mobile Menu and Sidebar */
+@media only screen and (max-width: 768px) {
+    .mobile-menus {
+        display: flex;
+    }
+
+    .left-sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px; /* Initially hide the sidebar off-screen */
+        height: 100vh; /* Full height */
+        width: 250px; /* Set the width of the sidebar */
+        background-color: #f8f9fa;
+        transition: left 0.3s ease; /* Smooth transition for sliding in/out */
+        z-index: 1000;
+
+        /* Flexbox setup to center items vertically */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Align items to start from the top */
+        padding: 1rem;
+    }
+
+    /* Sidebar becomes visible when .show class is added */
+    .left-sidebar.show {
+        left: 0; /* Slide the sidebar into view */
+    }
+
+    .left-sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%; /* Full width */
+    }
+
+    .left-sidebar ul li {
+        margin-bottom: 1rem; /* Space between list items */
+    }
+
+    /* Flex for list items to align icon and text */
+    .left-sidebar ul li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 14px;
+        color: #333;
+        gap: 0.5rem; /* Add space between icon and text */
+        transition: color 0.2s ease; /* Smooth color transition */
+    }
+
+    /* Hover effect for links */
+    .left-sidebar ul li a:hover {
+        color: #007bff;
+    }
+
+    /* Icons size and alignment */
+    .left-sidebar i {
+        min-width: 20px;
+        text-align: center;
+        font-size: 18px; /* Adjust icon size for mobile */
+    }
+
+    /*  Close button for the mobile side bar */
+    /* Style for the dynamically created close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it stays on top */
+}
+
+.close-btn:hover {
+    color: #007bff;
+}
+
+}
+
+#reportPostModal{
+    z-index: 1050;
+}
+
+
+
+
+/*
+POst modal
+
+*/
+
+
+/* Modal Overlay */
+/* Modal Background */
+/* Initial state of the modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden initially */
+    visibility: hidden; /* Hidden initially */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Fade in effect */
+  }
+  
+  /* When modal is active, make it visible */
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible; /* Makes the modal visible */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Make the transition smooth */
+  }
+  
+  /* Modal content styling */
+  .modal-content {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* When modal content becomes visible */
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  
+  /* Form elements */
+  .post-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    resize: none;
+
+  }
+
+  .media-preview-item {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .media-preview-img,
+  .media-preview-video {
+    width: 100px; /* Adjust size as necessary */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+    font-size: 16px;
+  }
+  
+
+.remove-btn:hover{
+    background-color: #e72525;
+    transform: scale(1.2 ) 
+}
+
+/*
+LOADER FOR FEEDS
+*/
+.loader {
+    width: 320px;
+    height: 150px;
+    display: block;
+    margin: auto;
+    position: relative;
+    background: #FFF;
+    box-sizing: border-box;
+  }
+  .loader::after {
+    content: '';
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    background-image: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 80%
+      ),
+      radial-gradient(circle 28px at 28px 28px, #DDD 99%, transparent 0),
+      linear-gradient(#DDD 24px, transparent 0),
+      linear-gradient(#DDD 18px, transparent 0),
+      linear-gradient(#DDD 66px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 75px 130px, 55px 56px, 160px 30px, 260px 20px, 290px 56px;
+    background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite;
+  }
+  
+  @keyframes animloader {
+    0% {
+      background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
+    }
+    100% {
+      background-position: 150% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
+    }
+  }
+  /*
+
+ALLFEEDS CSS
+
+  */
+
+  .post-ProfilePic{
+    width: 35px;
+    height: 35px;
+    border: 1px solid blueviolet;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+/* Comment Input*/
+.comment-input-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px 10px 20px;
+border-radius: 23px;
+border-top: 1px solid rgba(0, 0, 0, 0.199); 
+
+}
+.comment-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+}
+
+.profile-pic-wrapper {
+  flex-shrink: 0;
+}
+
+.comment-textarea-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.commentBox {
+  width: 98%;
+  height: 45px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+    background: 
+    linear-gradient(white, white) padding-box, /* Inner background */
+    linear-gradient(135deg, #D96C3B, #A8C686, #4BA3C3) border-box; /* Gradient border */
+  border: 2px solid transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+
+
+
+.comment-input textarea:focus {
+  background: 
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #4BA3C3, #A8C686, #D96C3B) border-box;
+}
+
+
+.commentBtns{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  
+}
+ .comment-input-area-Mobile{
+  padding: 15px 20px 10px 20px;
+ }
+@media (max-width: 767px) {
+  .commentBtns, .comment-input-area, .comment-input-media-preview-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .comment-input-area-Mobile {
+    display: none;
+  }
+}
+.commentBtns button, .attachmentBtn{
+ border: none;
+ background-color: transparent;
+ font-size: 15px;
+ padding: 5px;
+ border: solid 2px rgba(128, 127, 127, 0.301);
+ border-radius: 50%;
+ 
+}
+
+.commentBtns-mobile{
+display: flex;
+justify-content: space-between;
+padding: 10px;
+}
+
+.commentBtns-mobile button, .attachmentBtn{
+ border: none;
+ background-color: transparent;
+ font-size: 12px;
+ padding: 5px;
+ border: solid 2px rgba(128, 127, 127, 0.301);
+ border-radius: 15px;
+ margin-top: 15px;
+}
+/* General Media Container */
+.media-container {
+    margin-top: 10px;
+  }
+  
+  /* Base media item layout */
+  .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+cursor: pointer;
+  }
+  .media video{
+    height: 300px;
+  }
+
+  /* One full-width item */
+  .full-width {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+
+  }
+  
+  /* Two-column layout */
+  .media-item.two-column {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .two-column .media {
+    flex: 1;
+    max-height: 200px;
+    margin-top: 20px;
+  }
+  
+  /* More-than-three layout */
+  .media-item.more-than-three {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .more-than-three .media:first-child {
+    
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  
+  /* Grid layout for the remaining items */
+  .more-than-three .media.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Remove spacing between grid items */
+  }
+  
+  .more-than-three .media.three-columns .media {
+    aspect-ratio: 1 / 1; /* Make items square */
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .more-than-three .media.three-columns img,
+  .more-than-three .media.three-columns video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Overlay container for the last item */
+  .overlay-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .remaining-media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  /* Lightbox styles (unchanged but cleaned) */
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+  }
+  
+  .lightbox-content {
+    background-color: transparent;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+  }
+  
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(184, 184, 184, 0.445);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    padding: 10px 20px;
+  }
+  
+  .prev-button {
+    left: 10px;
+  }
+  
+  .next-button {
+    right: 10px;
+  }
+  /* Slider Container */
+.slider-container {
+  display: flex; /* Align images in a row */
+  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+  width: 100%; /* Ensure the container stretches full width */
+}
+
+.slider-image {
+  flex: 0 0 100%; /* Each image takes up full width */
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+.comments-section {
+  
+    padding: 20px;
+  }
+  .comment-card {
+  
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  .comment-header, .comment-imgNamearea {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 11px;
+    justify-content: space-between;
+  }
+
+  .comment-content {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .comment-media {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 10px; /* Add spacing between items */
+  }
+  
+  .comment-media-img,
+  .comment-media-video {
+    max-width: 100px;
+    border-radius: 5px;
+  }
+  .comment-media .media {
+    max-height: 100px;
+    cursor: pointer;
+  }
+  .comment-media .media img {
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .commentActions{
+    gap: 10px;
+    display: flex;
+    font-size: 11px;
+    justify-content: space-between;
+  }
+
+  .commentActionbtns{
+    gap: 10px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+  }
+
+  .lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slider-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.comment-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.comment-slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.comment-slider-inner {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.comment-slider-media {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-slider-media img,
+.comment-slider-media video {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.comment-prev-button,
+.comment-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.comment-prev-button {
+  left: 0;
+}
+
+.comment-next-button {
+  right: 0;
+}
+.comment-input-media-preview-desktop {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1; /* Only if needed */
+
+}
+
+
+.comment-input-media-preview-img{
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+
+.comment-input-remove-btn{
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+}
+
+
+.comment-card {
+  transition: background-color 1s ease;
+}
+
+.comment-card.highlight {
+  background-color: #fffccf; /* Light yellow */
+}
+
+
+/****
+REPLY SECTION
+*/
+
+/* Make sure the reply section is placed correctly */
+.replies-section {
+  margin-top: 10px; /* Add margin to separate from the parent comment */
+}
+
+/* Style each individual reply */
+.reply-card {
+  margin-left: 20px; /* Indent the reply under the parent comment */
+  margin-bottom: 10px; /* Space between replies */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+/* Ensure the reply input field has margin to not overlap */
+.reply-input {
+  margin-top: 10px;
+}
+
+/* Other styling for replies */
+.reply-header, .profileAndName {
+  display: flex;
+ 
+  justify-content: space-between;
+}
+
+.reply-content {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+.reply-media img, video{
+  height: 80px;
+  width: 80px;
+}
+.reply-profile-pic{
+  height: 40px;
+  width: 40px;
+  border: 1px solid blueviolet;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.reply-header-name-and-date p{
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  font-size: 12px;
+}
+.reply-action{
+  display: flex;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.reply-action span{
+margin-right: 10px;
+}
+
+/*
+COMMENT EDIT AREA
+*/
+.commentEdit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commentEdit-topRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.commentEdit-profilePic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.commentEdit-textarea {
+  flex: 1;
+  min-height: 40px;
+  font-size: 14px;
+  padding: 8px;
+  resize: none;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: height 0.2s ease; /* Smooth auto-grow */
+}
+
+.commentEdit-buttons {
+  margin-left: 50px; /* align with textarea (because of profile pic) */
+}
+
+.commentEdit-content {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/*Post Card*/
+.post-card{
+ border-radius: 23px;
+ margin-bottom: 20px;
+ border:solid 2px rgba(0, 0, 0, 0.199);
+ padding-bottom: 10px;
+ background-color: white;
+ box-shadow: 0px 2px 8px rgba(59, 59, 59, 0.2);
+}
+
+
+.card-header{
+  padding: 10px 20px 10px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199); 
+}
+
+.card-body, .card-footer{
+   padding: 10px 20px 10px 20px;
+}
+
+
+
+/* REPLY SECTION*/
+.media-preview img,
+.media-preview video {
+  height: 80px;
+  width: 80px;
+  border-radius: 15px;
+}
+.remove-media-btn{
+  background-color: rgba(39, 39, 39, 0.705);
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+  position: relative;
+  top: -20px;
+  left: -25px;
+}
+
+.remove-media-btn:hover{
+  background-color: rgb(245, 30, 30);
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+/* index.css or wherever you prefer to add custom styles */
+/* Prevent layout shift when offcanvas is open */
+body.offcanvas-active {
+  overflow: hidden; /* Lock body scroll when offcanvas is open */
+  padding-right: 0 !important; /* Prevent the layout shift due to scrollbar */
+}
+
+/* Styling for offcanvas on the right side */
+.offcanvas-end {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050; /* Ensure it stays above the content */
+  width: 300px; /* Width of offcanvas, adjust if needed */
+  transform: translateX(100%); /* Initially hidden */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* When the offcanvas is shown, slide it in */
+.offcanvas.show {
+  transform: translateX(0);
+}
+
+/* Ensure the content doesn't shift when offcanvas is opened */
+.container-fluid {
+  transition: margin-right 0.3s ease; /* Smooth transition when offcanvas opens */
+}
+
+body.offcanvas-active .container-fluid {
+  margin-right: 300px; /* Create space for the offcanvas when it's open */
+}
+
+/* Offcanvas on small screens (mobile-first) should take up the full screen */
+@media (max-width: 767px) {
+  .offcanvas-end {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Offcanvas on larger screens (desktops) should be a specific size */
+@media (min-width: 768px) {
+  .offcanvas-end {
+    width: 300px; /* Adjust as per your design */
+  }
+}
+
+
+/* Optional custom styling for the modal */
+.modal.show {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.post-type-toggle button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.post-type-toggle button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.post-type-tabs {
+  gap: 0.5rem;
+}
+
+.post-tab-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.post-tab-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+
+.profession-dropdown {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 4px;
+  padding-left: 0;
+  list-style: none;
+  background: white;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  cursor: pointer;
+}
+.profession-dropdown li {
+  padding: 8px 12px;
+}
+.profession-dropdown li:hover {
+  background-color: #eee;
+}
+
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -8px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 8px; /* gutter size */
+  background-clip: padding-box;
+}
+.my-masonry-grid_column > div {
+  margin-bottom: 8px;
+}
+input[type="file"] {
+  display: none !important;
+}
